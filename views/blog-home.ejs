@@ -1,0 +1,19 @@
+<% include ./partials/boilerplate %>
+<% include ./partials/header %>
+<% include ./partials/nav-bar %>
+
+<main>
+  <div class="postWrapper">
+    <% for (let posts of data) { %>
+    <div class="post">
+      <h1><%= posts.name %></h1>
+      <h2><%= posts.created_at %></h2>
+      <div><%= posts.image %></div>
+      <div><%= posts.content %></div>
+      <a href="/posts/<% posts.id %>">Read more</a>
+    </div>
+  <% } %>
+</main>
+
+<% include ./partials/footer %>
+<% include ./partials/end %>

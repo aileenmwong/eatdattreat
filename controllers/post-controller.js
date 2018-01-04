@@ -5,15 +5,14 @@ const postController = {};
 postController.index = (req, res) => {
   Post.findAll()
   .then(posts => {
-    res.json({
-      message: 'ok',
+    res.render('./blog-home', {
       data: posts,
     });
   }).catch(err => {
     console.log(err);
     res.status(500).json(err);
   });
-}
+};
 
 postController.show = (req, res) => {
   Post.findById(req.params.id)

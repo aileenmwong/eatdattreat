@@ -22,14 +22,13 @@ app.use(methodOverride('_method'));
 
 // index route
 app.get('/', (req, res) => {
-    res.render('blog-home');
+  res.render('blog-home');
 });
 
-// // get anything that hasn't already been matched
-// app.use('*', (req, res) => {
-//     // send a response with status 404
-//     res.status(404).send(err);
-// });
+// about route
+app.get('/about', (req, res) => {
+  res.render('blog-about');
+});
 
 // require the router
 const postRoutes = require('./routes/post-routes');
