@@ -12,6 +12,12 @@ postRoutes.get('/', postController.index);
 // get one post
 postRoutes.get('/:id', postController.show);
 
+// create one post
+postRoutes.post('/', postController.create);
+
+// update one post
+postRoutes.put('/:id', postController.update);
+
 // delete one post
 postRoutes.delete('/:id', postController.delete);
 
