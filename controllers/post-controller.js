@@ -16,9 +16,9 @@ postController.index = (req, res) => {
 
 postController.show = (req, res) => {
   Post.findById(req.params.id)
-  .then(post => {
+  .then(data => {
     res.render('./blog-single', {
-      data: post,
+      post: data,
     });
   }).catch(err => {
     console.log(err);
@@ -64,10 +64,9 @@ postController.update = (req, res) => {
 postController.delete = (req, res) => {
   Post.destroy(req.params.id)
   .then(() => {
-    res.json({
-      message: 'Post deleted successfully',
-    });
-  }).catch(err => {
+    res.redirect('/posts');
+    })
+  .catch(err => {
     console.log(err);
     res.status(500).json(err);
   });

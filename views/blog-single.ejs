@@ -3,12 +3,22 @@
 <% include ./partials/nav-bar %>
 
 <main>
-  <div class="single-post">
-    <h1><%= data.name %></h1>
-    <h1><%= data.created_at %></h1>
-    <h1><%= data.image %></h1>
-    <h1><%= data.content %></h1>
-    <a href="/posts">Back to blog</a>
+  <div>
+    <div class="single-post">
+      <h1><%= post.name %></h1>
+      <h1><%= post.created_at %></h1>
+      <h1><%= post.image %></h1>
+      <h1><%= post.content %></h1>
+      <a href="/posts">Back to blog</a>
+    </div>
+    <div id="buttonSingleWrapper">
+      <a href="/posts/<%= post.id %>/edit">
+        <button id="editSingle">EDIT</button>
+      </a>
+      <form action="/posts/<%= post.id %>?_method=Delete " method="Post">
+        <div><button id="deleteSingle">DELETE</button></div>
+      </form>
+    </div>
   </div>
 </main>
 
