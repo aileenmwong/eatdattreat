@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
+
 const logger = require('morgan');
+app.use(logger('dev'));
 
 //MIDDLEWARE
 //require bodyParser
@@ -20,7 +22,7 @@ app.use(methodOverride('_method'));
 
 // index route
 app.get('/', (req, res) => {
-    res.send('Hello world!');
+    res.render('blog-home');
 });
 
 // // get anything that hasn't already been matched
@@ -29,9 +31,17 @@ app.get('/', (req, res) => {
 //     res.status(404).send(err);
 // });
 
-//require the router
+// require the router
 const postRoutes = require('./routes/post-routes');
 app.use('/posts', postRoutes);
+
+// set the views so ejs can be rendered
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+// require public folder so anything placed in public folder can be used
+app.use(express.static('public'));
+app.use(express.static(__dirname + "/public"));
 
 //assign port
 const port = process.env.PORT || 3000;
