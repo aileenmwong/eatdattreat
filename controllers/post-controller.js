@@ -17,8 +17,7 @@ postController.index = (req, res) => {
 postController.show = (req, res) => {
   Post.findById(req.params.id)
   .then(post => {
-    res.json({
-      message: 'ok',
+    res.render('./blog-single', {
       data: post,
     });
   }).catch(err => {
