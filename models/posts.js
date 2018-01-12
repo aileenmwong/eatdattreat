@@ -6,41 +6,57 @@ const Post = {};
 
 // find all posts
 Post.findAll = () => {
-  return db.query(`SELECT * FROM posts`);
+  return db.query(`
+    SELECT posts.id, name, created_at, image, content, tag
+    FROM posts INNER JOIN tags
+    ON posts.tag = tags.id
+    `);
 }
 
+// find post by id
 Post.findById = (id) => {
   return db.oneOrNone(`
-    SELECT * FROM posts
-    WHERE id = $1
+    SELECT posts.id, name, created_at, image, content, tag
+    FROM posts INNER JOIN tags
+    ON posts.tag = tags.id
+    WHERE posts.id = $1
     `, [id]);
 }
 
 // create function needs work
+// create a new post
 Post.create = post => {
-  console.log('inside of create function')
+  posts.type = Number.parseInt(posts.type, 10)
+  console.log(posts.type)
   return db.one(
     `
     INSERT INTO posts
-    (name, created_at, image, content)
-    VALUES ($/name/, $/created_at/, $/image/, $/content/)
+    (name, created_at, image, content, tag)
+    VALUES ($/name/, $/created_at/, $/image/, $/content/, $/tag/)
     RETURNING *
-    `, [post.name, post.created_at, post.image, post.content]
+    `, [posts.name, posts.created_at, posts.image, posts.content, posts.tag]
     );
 }
 
+// update a post
 Post.update = (post, id) => {
-  return db.one(`
+  posts.tag = Number.parseInt(posts.tag, 10)
+  console.log(posts, id)
+  return db.one(
+    `
     UPDATE posts SET
     name = $1,
     created_at = $2,
     image = $3,
     content = $4
-    WHERE id = $5
+    tag = $5
+    WHERE id = $6
     RETURNING *
-    `, [post.name, post.created_at, post.image, post.content]);
+    `, [posts.name, posts.created_at, posts.image, posts.content, posts.tag]
+    );
 }
 
+// delete a post
 Post.destroy = (id) => {
   return db.none(`
     DELETE FROM posts

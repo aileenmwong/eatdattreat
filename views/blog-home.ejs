@@ -3,6 +3,7 @@
 <% include ./partials/nav-bar %>
 
 <main>
+  <a href="posts/add">Add a new post</a>
   <div class="postWrapper">
     <% for (let posts of data) { %>
     <div class="post">
@@ -10,6 +11,7 @@
       <h2><%= posts.created_at %></h2>
       <div><%= posts.image %></div>
       <div><%= posts.content %></div>
+      <div><%= posts.tag %></div>
       <a href="/posts/<%= posts.id %>">Read more</a>
     </div>
   <% } %>
