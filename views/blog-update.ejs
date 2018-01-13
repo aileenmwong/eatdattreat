@@ -3,6 +3,30 @@
 <% include ./partials/nav-bar %>
 
 <main>
+  <h1>Edit post</h1>
+  <form method='POST' action='/posts/<%= data.id %>?'
+  <input name="id" type="hidden" value="<%= data.id %>" />
+  <div>
+    <input name="name" type="text" placeholder="name" />
+  </div>
+  <div>
+    <input name="created_at" type="text" placeholder="date" />
+  </div>
+  <div>
+    <input name="image" type="text" placeholder="image" />
+  </div>
+  <div>
+    <textarea rows="10" cols="50" name="content" type="text" placeholder="content" ></textarea>
+  </div>
+  <div>
+    <select name="tag" type="text">
+      <option value="1">recipe</option>
+      <option value="2">treat</option>
+    </select>
+  </div>
+  <div>
+    <input type="submit" value="save" />
+  </div>
 </main>
 
 <% include ./partials/footer %>

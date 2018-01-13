@@ -43,18 +43,29 @@ postController.create = (req, res) => {
   });
 }
 
+postController.edit = (req, res) => {
+  Post.findById(req.params.id)
+  .then(posts => {
+    res.render('./blog-update', {
+      data: posts,
+    });
+  }).catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+}
+
 postController.update = (req, res) => {
   Post.update({
     name: req.body.name,
     created_at: req.body.created_at,
     image: req.body.image,
     content: req.body.content,
-  }, req.params.id).then(post => {
-    res.json({
-      message: 'Post updated successfully',
-      data: post,
-    });
-  }).catch(err => {
+    tag: req.body.tag
+  }, req.params.id).then(posts => {
+    res.redirect('/posts');
+    })
+  .catch(err => {
     console.log(err);
     res.status(500).json(err);
   });

@@ -23,7 +23,6 @@ Post.findById = (id) => {
     `, [id]);
 }
 
-// create function needs work
 // create a new post
 Post.create = posts => {
   posts.tag = Number.parseInt(posts.tag, 10)

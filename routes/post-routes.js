@@ -11,6 +11,9 @@ postRoutes.get('/add', (req, res) => {
   res.render('blog-add');
 });
 
+// get the edit page
+postRoutes.get('/:id/edit', postController.edit)
+
 // get one post
 postRoutes.get('/:id', postController.show);
 
