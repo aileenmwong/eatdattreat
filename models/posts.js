@@ -25,21 +25,22 @@ Post.findById = (id) => {
 
 // create function needs work
 // create a new post
-Post.create = post => {
-  posts.type = Number.parseInt(posts.type, 10)
-  console.log(posts.type)
+Post.create = posts => {
+  posts.tag = Number.parseInt(posts.tag, 10)
+  console.log('this is the post type -->', posts.tag);
   return db.one(
     `
     INSERT INTO posts
     (name, created_at, image, content, tag)
-    VALUES ($/name/, $/created_at/, $/image/, $/content/, $/tag/)
+    VALUES ($1, $2, $3, $4, $5)
     RETURNING *
-    `, [posts.name, posts.created_at, posts.image, posts.content, posts.tag]
+    `,
+    [posts.name, posts.created_at, posts.image, posts.content, posts.tag]
     );
 }
 
 // update a post
-Post.update = (post, id) => {
+Post.update = (posts, id) => {
   posts.tag = Number.parseInt(posts.tag, 10)
   console.log(posts, id)
   return db.one(

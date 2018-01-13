@@ -32,14 +32,13 @@ postController.create = (req, res) => {
     created_at: req.body.created_at,
     image: req.body.image,
     content: req.body.content,
+    tag: req.body.tag,
   })
-  .then(post => {
-    res.json({
-      message: 'Post added successfully',
-      data: post,
-    });
-  })
+  .then(posts => {
+    res.redirect('/posts');
+    })
   .catch(err => {
+    console.log(err);
     res.status(500).json(err);
   });
 }

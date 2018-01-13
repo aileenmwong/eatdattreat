@@ -10,21 +10,21 @@ INSERT INTO tags (subject) VALUES
 INSERT INTO posts (name, created_at, image, content, tag) VALUES
 (
   'first post',
-  DEFAULT,
+  '1/12/18',
   null,
   'hello world',
   '1'
 ),
 (
   'second post',
-  DEFAULT,
+  '1/12/18',
   null,
   'hello world 2',
   '2'
 ),
 (
   'third post',
-  DEFAULT,
+  '1/12/18',
   null,
   'hello world 3',
   '1'
