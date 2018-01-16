@@ -13,8 +13,31 @@ Post.findAll = () => {
     `);
 }
 
+// find all recipe posts
+Post.findAllRecipes = () => {
+  console.log('inside Recipes Model');
+  return db.query(`
+    SELECT posts.id, name, created_at, image, content, tag
+    FROM posts INNER JOIN tags
+    ON posts.tag = tags.id
+    WHERE posts.tag = 1
+    `);
+}
+
+// find all treat posts
+Post.findAllTreats = () => {
+  console.log('inside Treats Model');
+  return db.query(`
+    SELECT posts.id, name, created_at, image, content, tag
+    FROM posts INNER JOIN tags
+    ON posts.tag = tags.id
+    WHERE posts.tag = 2
+    `);
+}
+
 // find post by id
 Post.findById = (id) => {
+  console.log('inside find by id model')
   return db.oneOrNone(`
     SELECT posts.id, name, created_at, image, content, tag
     FROM posts INNER JOIN tags

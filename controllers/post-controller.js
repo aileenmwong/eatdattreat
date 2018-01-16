@@ -14,6 +14,32 @@ postController.index = (req, res) => {
   });
 };
 
+postController.indexRecipes = (req, res) => {
+  console.log('inside Recipes Controller')
+  Post.findAllRecipes()
+  .then(posts => {
+    res.render('./blog-recipes', {
+      data: posts,
+    });
+  }).catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+};
+
+postController.indexTreats = (req, res) => {
+  console.log('inside Treats Controller')
+  Post.findAllTreats()
+  .then(posts => {
+    res.render('./blog-treats', {
+      data: posts,
+    });
+  }).catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+};
+
 postController.show = (req, res) => {
   Post.findById(req.params.id)
   .then(data => {
@@ -68,6 +94,22 @@ postController.update = (req, res) => {
     })
   .catch(err => {
     console.log(err);
+    res.status(500).json(err);
+  });
+}
+
+postController.about = (req, res) => {
+    res.render('./blog-about', {
+  })
+  .catch(err => {
+    res.status(500).json(err);
+  });
+}
+
+postController.contact = (req, res) => {
+    res.render('./blog-contact', {
+  })
+  .catch(err => {
     res.status(500).json(err);
   });
 }

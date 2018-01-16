@@ -12,8 +12,8 @@ const path = require('path');
 //require Method Override
 const methodOverride = require('method-override');
 
-// require the model
-const Post = require('./models/posts');
+// // require the model
+// const Post = require('./models/posts');
 
 //use middleware
 app.use(bodyParser.json());
@@ -25,9 +25,19 @@ app.get('/', (req, res) => {
   res.render('blog-home');
 });
 
-// about route
-app.get('/about', (req, res) => {
-  res.render('blog-about');
+// // about route
+// app.get('/about', (req, res) => {
+//   res.render('blog-about');
+// });
+
+// render recipe page
+app.get('/recipes', (req, res) => {
+  res.render('blog-recipes');
+});
+
+// render treat page
+app.get('/treats', (req, res) => {
+  res.render('blog-treats');
 });
 
 // require the router
