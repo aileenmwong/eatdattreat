@@ -62,7 +62,8 @@ postController.update = (req, res) => {
     image: req.body.image,
     content: req.body.content,
     tag: req.body.tag
-  }, req.params.id).then(posts => {
+  }, req.params.id)
+  .then(posts => {
     res.redirect('/posts');
     })
   .catch(err => {

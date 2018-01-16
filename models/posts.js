@@ -48,11 +48,11 @@ Post.update = (posts, id) => {
     name = $1,
     created_at = $2,
     image = $3,
-    content = $4
+    content = $4,
     tag = $5
     WHERE id = $6
     RETURNING *
-    `, [posts.name, posts.created_at, posts.image, posts.content, posts.tag]
+    `, [posts.name, posts.created_at, posts.image, posts.content, posts.tag, id]
     );
 }
 
@@ -64,5 +64,5 @@ Post.destroy = (id) => {
     `, [id]);
 }
 
-
+// export the model
 module.exports = Post;
