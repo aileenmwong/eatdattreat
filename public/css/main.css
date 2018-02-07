@@ -1,5 +1,35 @@
 @import url("https://fonts.googleapis.com/css?family=Lilita+One|Open+Sans");
 body {
   margin: 0;
-  background-color: #bada55;
+  background-color: #ffffff;
   font-family: "Open Sans", sans-serif; }
+
+h1 {
+  font-family: "Lilita One", cursive; }
+
+header {
+  margin: 0 auto;
+  text-align: center; }
+
+button {
+  background-color: #d3d3d3;
+  color: #000000;
+  border-radius: 5px;
+  font-size: 14px;
+  height: 30px; }
+
+nav {
+  width: 70%;
+  margin: 0 auto; }
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; }
+  nav li {
+    list-style: none; }
+
+.post {
+  width: 90%;
+  background-color: #fff1f3;
+  border: 1px solid lightgray;
+  margin: 10px; }

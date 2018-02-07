@@ -22,7 +22,7 @@ app.use(methodOverride('_method'));
 
 // index route
 app.get('/', (req, res) => {
-  res.render('blog-home');
+  res.render('blog-index');
 });
 
 // // about route

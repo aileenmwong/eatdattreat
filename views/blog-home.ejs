@@ -3,7 +3,9 @@
 <% include ./partials/nav-bar %>
 
 <main>
-  <a href="posts/add"><button>Add a new post</button></a>
+  <div>
+    <a href="posts/add"><button>Add a new post</button></a>
+  </div>
   <div class="postWrapper">
     <% for (let posts of data) { %>
     <div class="post">
