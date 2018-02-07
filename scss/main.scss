@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Lilita+One|Open+Sans');
+
+$badass: #bada55;
+$headline-font: 'Lilita One', cursive;
+$body-font: 'Open Sans', sans-serif;
+
+body {
+  margin: 0;
+  background-color: $badass;
+  font-family: $body-font;
+}
