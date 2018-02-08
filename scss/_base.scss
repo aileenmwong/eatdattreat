@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-color: $background;
+  background-color: $white;
   font-family: $body-font;
 }
 
@@ -13,6 +13,16 @@ header {
   text-align: center;
 }
 
+.titleHead {
+  font-size: 50px;
+  text-decoration: none;
+  color: black;
+}
+
+.titleHead:hover {
+  opacity: .5;
+}
+
 .contentWrapper {
   display: flex;
   flex-direction: row;
@@ -23,21 +33,13 @@ header {
   width: 100%;
 }
 
-.sideBar {
-  // border: 1px solid black;
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
 .subject {
   text-align: center;
+  font-size: 60px;
 }
 
 .userForm {
   width: 100%;
-  background-color: $post-background;
+  background-color: $babypink;
 }
 

@@ -8,14 +8,15 @@
     <div class="postWrapper">
       <% for (let posts of data) { %>
       <div class="post">
-        <h1><%= posts.name %></h1>
-        <h2><%= posts.tagline %></h2>
-        <h5><%= posts.author %></h5>
-        <h5><%= posts.created_at %></h5>
-        <div><%= posts.image %></div>
+        <h1 class="postTitle"><%= posts.name %></h1>
+        <h3 class="postTagline"><%= posts.tagline %></h3>
+        <div class="authorData">
+          <h6>Author: <%= posts.author %></h6>
+          <h6>Created on: <%= posts.created_at %></h6>
+        </div>
+        <div class="mainImage"><img src="<%= posts.image %>"></div>
         <div><%= posts.content %></div>
-        <div><%= posts.tag %></div>
-        <a href="/posts/<%= posts.id %>">Read more</a>
+        <div class="readMoreLink"><a href="/posts/<%= posts.id %>">Read more</a></div>
       </div>
     <% } %>
     </div>

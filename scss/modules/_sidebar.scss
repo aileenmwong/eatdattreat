@@ -1,0 +1,25 @@
+.sideBar {
+  // border: 1px solid black;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.sidePost {
+  background: linear-gradient($lightgray, $white);
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 15px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.sideHead {
+  text-align: center;
+}
+
+.sideThumbImg {
+  height: 180px;
+}

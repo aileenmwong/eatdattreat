@@ -6,11 +6,16 @@
   <div class="contentWrapper">
     <div class="postWrapper">
       <div class="post">
-        <h1><%= post.name %></h1>
-        <div><%= post.created_at %></div>
-        <div><%= post.image %></div>
-        <div><%= post.content %></div>
-        <a href="/posts">Back to blog</a>
+            <h1><%= post.name %></h1>
+            <h2><%= post.tagline %></h2>
+            <div class="authorData">
+              <h6>Author: <%= post.author %></h6>
+              <h6>Created on: <%= post.created_at %></h6>
+            </div>
+            <div class="mainImage"><img src="<%= post.image %>"></div>
+            <div class="thumbImage"><img src="<%= post.thumbnail %>"></div>
+            <div><%= post.content %></div>
+
         <div class="buttonSingleWrapper">
           <a href="/posts/<%= post.id %>/edit">
             <button id="editSingle">EDIT</button>
@@ -19,6 +24,7 @@
             <div><button id="deleteSingle">DELETE</button></div>
           </form>
         </div>
+        <div class="readMoreLink"><a href="/posts">Back to blog</a></div>
       </div>
     </div>
     <% include ./partials/single-sidebar %>

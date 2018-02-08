@@ -1,14 +1,20 @@
 <div class="sideBar">
   <div class="author">
-    <h1>Hi there!</h1>
+    <h1 class="sideHead">Hi there!</h1>
     <img class="authorPhoto"></img>
     <div class="authorBio">Hi! I'm Aileen. I love finding tasty treats around NYC. I also like to cook at home.</div>
   </div>
-  <h1>More Posts</h1>
+  <h1 class="sideHead">More Posts</h1>
   <% for (let posts of data) { %>
     <div class="sidePost">
-      <a href="/posts/<%= posts.id %>"><div><%= posts.image %></div></a>
-      <div><%= posts.name %></div>
+      <div class="sideThumb">
+        <a href="/posts/<%= posts.id %>">
+          <div>
+            <img class=sideThumbImg src="<%= posts.thumbnail %>">
+          </div>
+        </a>
+      </div>
+      <div><%= posts.tagline %></div>
     </div>
   <% } %>
 </div>

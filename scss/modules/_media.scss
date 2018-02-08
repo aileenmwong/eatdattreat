@@ -1,0 +1,23 @@
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.mainImage {
+  height: 500px;
+  width: auto;
+  text-align: center;
+  align-items: center;
+  vertical-align: middle;
+  margin-bottom: 30px;
+}
+
+.thumbImage {
+  margin-bottom: 30px;
+}
+
+.sideThumb {
+  margin-bottom: 10px;
+}
