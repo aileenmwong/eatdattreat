@@ -13,3 +13,26 @@ header {
   text-align: center;
 }
 
+.contentWrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.postWrapper {
+  // border: 1px solid black;
+  width: 100%;
+}
+
+.sideBar {
+  // border: 1px solid black;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.subject {
+  text-align: center;
+}
+

@@ -4,19 +4,26 @@
 
 <main>
   <div>
-    <a href="posts/add"><button>Add a new post</button></a>
+    <a href="posts/add"><button class="addNew">Add a new post</button></a>
   </div>
-  <div class="postWrapper">
-    <% for (let posts of data) { %>
-    <div class="post">
-      <h1><%= posts.name %></h1>
-      <h2><%= posts.created_at %></h2>
-      <div><%= posts.image %></div>
-      <div><%= posts.content %></div>
-      <div><%= posts.tag %></div>
-      <a href="/posts/<%= posts.id %>">Read more</a>
+  <div class="contentWrapper">
+    <div class="postWrapper">
+
+      <div class="allPosts">
+        <% for (let posts of data) { %>
+          <div class="post">
+            <h1><%= posts.name %></h1>
+            <h2><%= posts.created_at %></h2>
+            <div><%= posts.image %></div>
+            <div><%= posts.content %></div>
+            <div><%= posts.tag %></div>
+            <a href="/posts/<%= posts.id %>">Read more</a>
+          </div>
+        <% } %>
+      </div>
     </div>
-  <% } %>
+    <% include ./partials/sidebar %>
+  </div>
 </main>
 
 <% include ./partials/footer %>

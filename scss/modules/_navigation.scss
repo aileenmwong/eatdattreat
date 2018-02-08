@@ -11,3 +11,17 @@ nav {
     list-style: none;
   }
 }
+
+footer {
+  width: 20%;
+  margin: 0 auto;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  li {
+    list-style: none;
+  }
+}

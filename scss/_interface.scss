@@ -5,3 +5,11 @@ button {
   font-size: 14px;
   height: 30px;
 }
+
+button:hover {
+  background-color: $button-hover;
+}
+
+.addNew {
+  margin: 10px;
+}
