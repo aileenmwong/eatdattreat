@@ -3,33 +3,55 @@
 <% include ./partials/nav-bar %>
 
 <main>
-  <h1>Edit post</h1>
-  <form method='POST' action='/posts/<%= data.id %>?_method=PUT'>
-    <div>
-      <input name="id" type="hidden" value="<%= data.id %>" />
-      <div>
-        <input name="name" type="text" value="<%= data.name %>" />
-      </div>
-      <div>
-        <input name="created_at" type="text" value="<%= data.created_at %>" />
-      </div>
-      <div>
-        <input name="image" type="text" value="<%= data.image %>" />
-      </div>
-      <div>
-        <textarea rows="10" cols="50" name="content" type="text" ><%= data.content %></textarea>
-      </div>
-      <div>
-        <select name="tag" type="text">
-          <option value="1">recipe</option>
-          <option value="2">treat</option>
-        </select>
-      </div>
+  <h1 class="subject">Edit post</h1>
+  <div class="contentWrapper">
+    <div class="post">
+      <form method='POST' action='/posts/<%= data.id %>?_method=PUT'>
+        <div>
+          <input name="id" type="hidden" value="<%= data.id %>" />
+          <div>
+            <p>Title</p>
+            <input name="name" type="text" value="<%= data.name %>" />
+          </div>
+          <div>
+            <p>Tagline</p>
+            <input name="tagline" type="text" value="<%= data.tagline %>" />
+          </div>
+          <div>
+            <p>Author</p>
+            <input name="author" type="text" value="<%= data.author %>" />
+          </div>
+          <div>
+            <p>Date</p>
+            <input name="created_at" type="text" value="<%= data.created_at %>" />
+          </div>
+          <div>
+            <p>Image URL</p>
+            <input name="image" type="text" value="<%= data.image %>" />
+          </div>
+          <div>
+            <p>Thumbnail URL</p>
+            <input name="thumbnail" type="text" value="<%= data.thumbnail %>" />
+          </div>
+          <div>
+            <p>Content</p>
+            <textarea rows="10" cols="50" name="content" type="text" ><%= data.content %></textarea>
+          </div>
+          <div>
+            <p>Type</p>
+            <select name="tag" type="text">
+              <option value="1">recipe</option>
+              <option value="2">treat</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <input type="submit" value="save" />
+        </div>
+      </form>
     </div>
-    <div>
-      <input type="submit" value="save" />
-    </div>
-  </form>
+    <% include ./partials/single-sidebar %>
+  </div>
 </main>
 
 <% include ./partials/footer %>

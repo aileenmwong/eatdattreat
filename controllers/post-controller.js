@@ -55,10 +55,13 @@ postController.show = (req, res) => {
 postController.create = (req, res) => {
   Post.create({
     name: req.body.name,
+    tagline: req.body.tagline,
+    author: req.body.author,
     created_at: req.body.created_at,
     image: req.body.image,
+    thumbnail: req.body.thumbnail,
     content: req.body.content,
-    tag: req.body.tag,
+    tag: req.body.tag
   })
   .then(posts => {
     res.redirect('/posts');
@@ -84,8 +87,11 @@ postController.edit = (req, res) => {
 postController.update = (req, res) => {
   Post.update({
     name: req.body.name,
+    tagline: req.body.tagline,
+    author: req.body.author,
     created_at: req.body.created_at,
     image: req.body.image,
+    thumbnail: req.body.thumbnail,
     content: req.body.content,
     tag: req.body.tag
   }, req.params.id)

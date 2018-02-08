@@ -13,7 +13,9 @@
         <% for (let posts of data) { %>
           <div class="post">
             <h1><%= posts.name %></h1>
-            <h2><%= posts.created_at %></h2>
+            <h2><%= posts.tagline %></h2>
+            <h5><%= posts.author %></h5>
+            <h5><%= posts.created_at %></h5>
             <div><%= posts.image %></div>
             <div><%= posts.content %></div>
             <div><%= posts.tag %></div>

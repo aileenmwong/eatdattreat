@@ -3,32 +3,44 @@
 <% include ./partials/nav-bar %>
 
 <main>
-  <h1>Add a new post</h1>
-
-    <form method='POST' action='/posts'>
-      <div>
-        <input name="name" type="text" placeholder="name" />
-      </div>
-      <div>
-        <input name="created_at" type="text" placeholder="date" />
-      </div>
-      <div>
-        <input name="image" type="text" placeholder="image" />
-      </div>
-      <div>
-        <textarea rows="10" cols="50" name="content" type="text" placeholder="content" ></textarea>
-      </div>
-      <div>
-        <select name="tag" type="text">
-          <option value="1">recipe</option>
-          <option value="2">treat</option>
-        </select>
-      </div>
-      <div>
-        <input type="submit" value="save" />
-      </div>
-    </form>
-
+  <h1 class="subject">Add a new post</h1>
+  <div class="contentWrapper">
+    <div class="post">
+      <form method='POST' action='/posts'>
+        <div>
+          <input name="name" type="text" placeholder="name" />
+        </div>
+        <div>
+          <input name="tagline" type="text" placeholder="tagline" />
+        </div>
+        <div>
+          <input name="author" type="text" placeholder="author" />
+        </div>
+        <div>
+          <input name="created_at" type="text" placeholder="date" />
+        </div>
+        <div>
+          <input name="image" type="text" placeholder="image" />
+        </div>
+        <div>
+          <input name="thumbnail" type="text" placeholder="thumbnail" />
+        </div>
+        <div>
+          <textarea rows="10" cols="50" name="content" type="text" placeholder="content" ></textarea>
+        </div>
+        <div>
+          <select name="tag" type="text">
+            <option value="1">recipe</option>
+            <option value="2">treat</option>
+          </select>
+        </div>
+        <div>
+          <input type="submit" value="save" />
+        </div>
+      </form>
+    </div>
+    <% include ./partials/single-sidebar %>
+  </div>
 </main>
 
 <% include ./partials/footer %>

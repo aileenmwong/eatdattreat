@@ -419,6 +419,10 @@ header {
 .subject {
   text-align: center; }
 
+.userForm {
+  width: 100%;
+  background-color: #fff1f3; }
+
 button {
   background-color: #d3d3d3;
   color: #000000;
@@ -431,6 +435,13 @@ button:hover {
 
 .addNew {
   margin: 10px; }
+
+.buttonSingleWrapper {
+  display: flex;
+  flex-direction: row;
+  width: 130px;
+  justify-content: space-between;
+  margin-top: 10px; }
 
 nav {
   width: 70%;

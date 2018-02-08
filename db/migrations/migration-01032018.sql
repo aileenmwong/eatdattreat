@@ -9,8 +9,11 @@ CREATE TABLE IF NOT EXISTS tags (
 CREATE TABLE IF NOT EXISTS posts (
   id BIGSERIAL PRIMARY KEY,
   name VARCHAR(255),
+  tagline VARCHAR(1000),
+  author VARCHAR(255),
   created_at VARCHAR(255),
-  image VARCHAR (255),
+  image VARCHAR(1000),
+  thumbnail VARCHAR(1000),
   content VARCHAR(20000),
   tag INTEGER REFERENCES tags(id)
 );
