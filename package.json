@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/aileenmwong/eatdattreat#readme",
   "dependencies": {
+    "axios": "^0.17.1",
     "body-parser": "^1.18.2",
     "ejs": "^2.5.7",
     "ejs-lint": "^0.3.0",
