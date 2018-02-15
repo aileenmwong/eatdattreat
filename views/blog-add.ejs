@@ -19,13 +19,16 @@
         <div>
           <input name="created_at" type="text" placeholder="date" />
         </div>
-        <div class="card">
+        <div>
+          <input name="image" type="text" placeholder="image" />
+        </div>
+<!--         <div class="card">
           <img src="http://fillmurray.com/g/300/300" id="img-preview" />
           <label class="file-upload-container" for="file-upload">
-            <input id="file-upload" type="file" style="display:none;">
+            <input name="image" id="file-upload" type="file" style="display:none;">
             Select an Image
           </label>
-        </div>
+        </div> -->
         <div>
           <input name="thumbnail" type="text" placeholder="thumbnail" />
         </div>
@@ -39,7 +42,7 @@
           </select>
         </div>
         <div>
-          <input type="submit" value="save" />
+          <input id="saveButton" type="submit" value="save" />
         </div>
       </form>
     </div>
@@ -48,7 +51,5 @@
 
 </main>
 
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="/scripts/app.js"></script>
 <% include ./partials/footer %>
 <% include ./partials/end %>

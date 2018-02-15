@@ -35,13 +35,13 @@ postRoutes.put('/:id', postController.update);
 // delete one post
 postRoutes.delete('/:id', postController.delete);
 
+// create one post
+postRoutes.post('/', postController.create);
 
 
 // get all the posts
 postRoutes.get('/', postController.index);
 
-// create one post
-postRoutes.post('/', postController.create);
 
 // export the router
 module.exports = postRoutes;
