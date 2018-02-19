@@ -5,6 +5,23 @@
   flex-direction: column;
   padding: 10px;
   box-sizing: border-box;
+  margin-left: 30px;
+}
+
+.authorBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.authorPhoto {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  margin-bottom: 30px;
+}
+
+.authorBio {
+  text-align: center;
 }
 
 .sidePost {

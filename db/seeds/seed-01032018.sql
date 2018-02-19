@@ -9,8 +9,8 @@ INSERT INTO tags (subject) VALUES
 
 INSERT INTO posts (name, tagline, author, created_at, image, thumbnail, content, tag) VALUES
 (
-  'first post',
-  'this is my first tagline',
+  'Taiyaki Fish Ice Cream',
+  'Fish Ice Cream in Chinatown NYC is a take on the traditional Japanese fish cake.',
   'Aileen Wong',
   '1/12/18',
   'http://lrfs7g12er-flywheel.netdna-ssl.com/wp-content/uploads/2018/01/bloodorangelo_2003-2-680x900.jpg',
