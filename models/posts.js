@@ -7,7 +7,7 @@ const Post = {};
 // find all posts
 Post.findAll = () => {
   return db.query(`
-    SELECT posts.id, name, tagline, author, created_at, image, thumbnail, content, tag
+    SELECT posts.id, name, tagline, author, created_at, image, thumbnail, content1, content2, quote, link, tag
     FROM posts INNER JOIN tags
     ON posts.tag = tags.id
     `);
@@ -17,7 +17,7 @@ Post.findAll = () => {
 Post.findAllRecipes = () => {
   console.log('inside Recipes Model');
   return db.query(`
-    SELECT posts.id, name, tagline, author, created_at, image, thumbnail, content, tag
+    SELECT posts.id, name, tagline, author, created_at, image, thumbnail, content1, content2, quote, link, tag
     FROM posts INNER JOIN tags
     ON posts.tag = tags.id
     WHERE posts.tag = 1
@@ -28,7 +28,7 @@ Post.findAllRecipes = () => {
 Post.findAllTreats = () => {
   console.log('inside Treats Model');
   return db.query(`
-    SELECT posts.id, name, tagline, author, created_at, image, thumbnail, content, tag
+    SELECT posts.id, name, tagline, author, created_at, image, thumbnail, content1, content2, quote, link, tag
     FROM posts INNER JOIN tags
     ON posts.tag = tags.id
     WHERE posts.tag = 2
@@ -39,7 +39,7 @@ Post.findAllTreats = () => {
 Post.findById = (id) => {
   console.log('inside find by id model')
   return db.oneOrNone(`
-    SELECT posts.id, name, tagline, author, created_at, image, thumbnail, content, tag
+    SELECT posts.id, name, tagline, author, created_at, image, thumbnail, content1, content2, quote, link, tag
     FROM posts INNER JOIN tags
     ON posts.tag = tags.id
     WHERE posts.id = $1
@@ -53,11 +53,11 @@ Post.create = posts => {
   return db.one(
     `
     INSERT INTO posts
-    (name, tagline, author, created_at, image, thumbnail, content, tag)
-    VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+    (name, tagline, author, created_at, image, thumbnail, content1, content2, quote, link, tag)
+    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
     RETURNING *
     `,
-    [posts.name, posts.tagline, posts.author, posts.created_at, posts.image, posts.thumbnail, posts.content, posts.tag]
+    [posts.name, posts.tagline, posts.author, posts.created_at, posts.image, posts.thumbnail, posts.content1, posts.content2, posts.quote, posts.link, posts.tag]
     );
 }
 
@@ -74,11 +74,14 @@ Post.update = (posts, id) => {
     created_at = $4,
     image = $5,
     thumbnail = $6,
-    content = $7,
-    tag = $8
-    WHERE id = $9
+    content1 = $7,
+    content2 = $8,
+    quote = $9,
+    link = $10,
+    tag = $11
+    WHERE id = $12
     RETURNING *
-    `, [posts.name, posts.tagline, posts.author, posts.created_at, posts.image, posts.thumbnail, posts.content, posts.tag, id]
+    `, [posts.name, posts.tagline, posts.author, posts.created_at, posts.image, posts.thumbnail, posts.content1, posts.content2, posts.quote, posts.link, posts.tag, id]
     );
 }
 

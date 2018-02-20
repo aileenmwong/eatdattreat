@@ -7,18 +7,23 @@
   <div class="contentWrapper">
     <div class="post">
       <form method='POST' action='/posts'>
+        <h4>Name of Post</h4>
         <div>
           <input name="name" type="text" placeholder="name" />
         </div>
+        <h4>Tagline</h4>
         <div>
           <input name="tagline" type="text" placeholder="tagline" />
         </div>
+        <h4>Author</h4>
         <div>
           <input name="author" type="text" placeholder="author" />
         </div>
+        <h4>Date</h4>
         <div>
           <input name="created_at" type="text" placeholder="date" />
         </div>
+        <h4>Image Link</h4>
         <div>
           <input name="image" type="text" placeholder="image" />
         </div>
@@ -29,12 +34,27 @@
             Select an Image
           </label>
         </div> -->
+        <h4>Thumbnail Image Link</h4>
         <div>
           <input name="thumbnail" type="text" placeholder="thumbnail" />
         </div>
+        <h4>First Paragraph</h4>
         <div>
-          <textarea rows="10" cols="50" name="content" type="text" placeholder="content" ></textarea>
+          <textarea rows="10" cols="50" name="content1" type="text" placeholder="First Paragraph" ></textarea>
         </div>
+        <h4>Second Paragraph</h4>
+        <div>
+          <textarea rows="10" cols="50" name="content2" type="text" placeholder="Second Paragraph" ></textarea>
+        </div>
+        <h4>Quote</h4>
+        <div>
+          <textarea rows="5" cols="50" name="quote" type="text" placeholder="Quote" ></textarea>
+        </div>
+        <h4>More Info Link</h4>
+        <div>
+          <input name="link" type="text" placeholder="link" />
+        </div>
+        <h4>Post Type</h4>
         <div>
           <select name="tag" type="text">
             <option value="1">recipe</option>

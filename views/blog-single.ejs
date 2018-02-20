@@ -6,15 +6,18 @@
   <div class="contentWrapper">
     <div class="postWrapper">
       <div class="post">
-            <h1><%= post.name %></h1>
-            <h2><%= post.tagline %></h2>
+            <h1 class="postTitle"><%= post.name %></h1>
             <div class="authorData">
               <h6>Author: <%= post.author %></h6>
               <h6>Created on: <%= post.created_at %></h6>
             </div>
+            <h3 class="postTagline"><%= post.tagline %></h3>
             <div class="mainImage"><img src="<%= post.image %>"></div>
+            <div><%= post.content1 %></div>
             <div class="thumbImage"><img src="<%= post.thumbnail %>"></div>
-            <div><%= post.content %></div>
+            <div><%= post.content2 %></div>
+            <div><%= post.quote %></div>
+            <div>More info about this here:<%= post.link %></div>
 
         <div class="buttonSingleWrapper">
           <a href="/posts/<%= post.id %>/edit">

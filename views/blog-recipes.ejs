@@ -9,11 +9,11 @@
       <% for (let posts of data) { %>
       <div class="post">
         <h1 class="postTitle"><%= posts.name %></h1>
-        <h3 class="postTagline"><%= posts.tagline %></h3>
         <div class="authorData">
           <h6>Author: <%= posts.author %></h6>
           <h6>Created on: <%= posts.created_at %></h6>
         </div>
+        <h3 class="postTagline"><%= posts.tagline %></h3>
         <div class="mainImage"><img src="<%= posts.image %>"></div>
         <div><%= posts.content %></div>
         <div class="readMoreLink"><a href="/posts/<%= posts.id %>">Read more</a></div>

@@ -60,7 +60,10 @@ postController.create = (req, res) => {
     created_at: req.body.created_at,
     image: req.body.image,
     thumbnail: req.body.thumbnail,
-    content: req.body.content,
+    content1: req.body.content1,
+    content2: req.body.content2,
+    quote: req.body.quote,
+    link: req.body.link,
     tag: req.body.tag
   })
   .then(posts => {
@@ -92,7 +95,10 @@ postController.update = (req, res) => {
     created_at: req.body.created_at,
     image: req.body.image,
     thumbnail: req.body.thumbnail,
-    content: req.body.content,
+    content1: req.body.content1,
+    content2: req.body.content2,
+    quote: req.body.quote,
+    link: req.body.link,
     tag: req.body.tag
   }, req.params.id)
   .then(posts => {
