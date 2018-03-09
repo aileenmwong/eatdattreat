@@ -21,3 +21,12 @@ button:hover {
   justify-content: space-between;
   margin-top: 10px;
 }
+
+#saveButton {
+  background-color: $lightgray;
+  color: $button-text;
+  border-radius: 5px;
+  font-size: 14px;
+  height: 30px;
+  margin-top: 30px;
+}

@@ -14,8 +14,20 @@
 
 .postTagline {
   font-family: $post-header-font;
-  margin-top: 10px;
-  margin-bottom: 5px;
+  font-size: 30px;
+  text-align: center;
+  margin: 10px 100px;
+}
+
+.postQuote {
+  border: 4px solid lightgray;
+  padding: 30px;
+  margin: 30px;
+}
+
+.moreInfo {
+  margin-top: 50px;
+  margin-bottom: 30px;
 }
 
 .authorData {

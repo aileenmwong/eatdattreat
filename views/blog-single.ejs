@@ -13,11 +13,11 @@
             </div>
             <h3 class="postTagline"><%= post.tagline %></h3>
             <div class="mainImage"><img src="<%= post.image %>"></div>
-            <div><%= post.content1 %></div>
+            <p><%= post.content1 %></p>
             <div class="thumbImage"><img src="<%= post.thumbnail %>"></div>
-            <div><%= post.content2 %></div>
-            <div><%= post.quote %></div>
-            <div>More info about this here:<%= post.link %></div>
+            <p><%= post.content2 %></p>
+            <p class="postTagline postQuote"><%= post.quote %></p>
+            <div class="moreInfo"><a href="<%= post.link %>">More info</a></div>
 
         <div class="buttonSingleWrapper">
           <a href="/posts/<%= post.id %>/edit">
